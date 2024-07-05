@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  mysql:
+    image: mysql:8.0
+    restart: always
+    env_file: .env
+    environment:
+      MYSQL_USER: ${USER}
+      MYSQL_PASSWORD: ${PASSWORD}
+      MYSQL_DATABASE: ${DATABASE}
+    ports:
+      - "${PORT}:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  bot:
+    container_name: educational_practice_tg_bot
+    depends_on:
+      - mysql
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python3 -m src.main
+
+volumes:
+  mysql-data:
