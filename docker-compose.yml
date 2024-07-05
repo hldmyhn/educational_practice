@@ -6,8 +6,7 @@ services:
     restart: always
     env_file: .env
     environment:
-      MYSQL_USER: ${USER}
-      MYSQL_PASSWORD: ${PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${PASSWORD}
       MYSQL_DATABASE: ${DATABASE}
     ports:
       - "${PORT}:3306"
