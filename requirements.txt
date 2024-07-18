@@ -6,5 +6,5 @@ git+https://github.com/Tishka17/aiogram_dialog.git@feature/groups
 SQLAlchemy~=2.0.31
 aiomysql~=0.2.0
 aiogram_dialog~=2.2.0a4
-pytest-asyncio~=0.23.7
+pytest-asyncio~=0.23.8
 pytest~=8.2.2
